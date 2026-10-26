@@ -51,6 +51,20 @@ python engine/gate_all.py --pptx 成品.pptx --profile presentation
 [`references/QUANT-RULES.md`](references/QUANT-RULES.md)，用法见
 [`references/GATES-USAGE.md`](references/GATES-USAGE.md)。
 
+## 赛事设计令牌
+
+`engine/palette_presets.py` 内置九套配色令牌，覆盖挑战杯红金、国创赛科技蓝、职规成长暖橙、
+职规就业青蓝、实业墨绿、深景科技，以及三套学术答辩配色。每套给九个角色色值
+（主色、辅助色、强调色、正文、弱化文字、背景、面板、分隔线、反白色）与九个角色的字号下限。
+
+```bash
+python engine/palette_presets.py
+```
+
+九套令牌全部通过色觉缺陷与灰度判定：可混淆对合计 0，正文对背景对比度在 13.77 到 17.40 之间，
+反白对主色在 5.32 到 13.13 之间。令牌来源与逐条出处见
+[`references/CONTEST-DESIGN-TOKENS.md`](references/CONTEST-DESIGN-TOKENS.md)。
+
 ## 三档口径
 
 同一份 PPT 在不同场合的可读性要求不同，字号下限按档位取值。
@@ -89,9 +103,11 @@ engine/plan.py           按赛事评审口径排大纲
 engine/qc.py             pptx -> PDF -> PNG + contact sheet
 engine/shrink_media.py   压缩风格包内嵌媒体，便于分发
 engine/verify_styles.py  检查风格包结构完整性
+engine/palette_presets.py 九套赛事配色令牌与字号下限
 engine/gate_*.py         六道量化门
 engine/gate_all.py       统一入口
-references/              内容 schema、写作规则、复刻原理、量化判据、页面规格、设计令牌
+references/              内容 schema、写作规则、复刻原理、量化判据、页面规格、
+                         上游 skill 调研（UPSTREAM-SKILLS.md）、赛事设计令牌（CONTEST-DESIGN-TOKENS.md）
 ```
 
 ## 依赖
@@ -127,6 +143,7 @@ python engine/build_style.py --src 你的参考.pptx --outdir styles/my-style --
 - [adithya-s-k/research-presentation-template](https://github.com/adithya-s-k/research-presentation-template)（MIT）— 主题令牌与溢出守卫
 - [tristan-mcinnis/pptx-from-layouts-skill](https://github.com/tristan-mcinnis/pptx-from-layouts-skill)（MIT）— 严格套模板母版
 - [addsumtech/slides_maker](https://github.com/addsumtech/slides_maker)（MIT）— 论文转原生 PPTX
+- [M1n-n9/academic-ppt-master](https://github.com/M1n-n9/academic-ppt-master)（MIT）— 学术品牌令牌，进入赛事配色库
 - [anthropics/skills](https://github.com/anthropics/skills) 的 pptx skill — 只参考做法与陷阱清单，未复制代码
 - [gitbrent/PptxGenJS](https://github.com/gitbrent/PptxGenJS)（MIT）与 [scanny/python-pptx](https://github.com/scanny/python-pptx)（MIT）— 底层库
 
