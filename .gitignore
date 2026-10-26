@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+*.pyo
+_work/
+.pytest_cache/
+
+# 生成物
+*.gates.json
+*.fitreport.json
+*.alignreport.json
+*.working.pptx
+.working.pptx
+
+# 本地风格包（体积大，且来自他人作品，不随仓库分发）
+styles/*/pack.pptx
+styles/*/pdf/
+styles/*/png/
+styles/*/thumbs/
+styles/*/slots.json
+styles/*/catalog.md
+styles/*/meta.json
+styles/_preview/
+
+# 临时文件
+.tmp/
+*.log
