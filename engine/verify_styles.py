@@ -3,6 +3,10 @@ import json, os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STYLES = os.path.join(ROOT, 'styles')
 
+if not os.path.isdir(STYLES):
+    print('没有 styles 目录。先用 build_style.py 从参考 pptx 抽一套风格包。')
+    sys.exit(1)
+
 problems = []
 for name in sorted(os.listdir(STYLES)):
     d = os.path.join(STYLES, name)
