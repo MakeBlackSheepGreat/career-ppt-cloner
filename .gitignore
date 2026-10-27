@@ -24,3 +24,4 @@ styles/_preview/
 # 临时文件
 .tmp/
 *.log
+.dsh-ops/
